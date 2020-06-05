@@ -38,8 +38,8 @@ So inside the folder you just cloned, The first thing we need to create our proj
 ### Iteration 1 - User Model
 
 First, we need to create the `User` model. Inside the `models` folder, you will create a `user.js` file, so we need to add the followings:
-- ** `username` ** - will be a string,
-- ** `password` ** - will be a string,
+- **`username`** - will be a string,
+- **`password`** - will be a string,
 - **`status`** - will be a string, and you should add an `enum` because the only possible values are: *"Pending Confirmation"* or *"Active"*. By default, when a new user is created, it will be set to *"Pending Confirmation"*.
 - **`confirmationCode`** - here we will store a confirmation code; it will be unique for each user.
 - **`email`** - the user will complete the signup form with the email they will use to confirm the account.
