@@ -29,11 +29,11 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const profileRouter = require('./routes/profile');
 const authRouter = require('./routes/auth');
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/profile', profileRouter);
 app.use('/', authRouter);
 
 module.exports = app;

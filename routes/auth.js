@@ -45,17 +45,19 @@ router.post("/signup", (req, res) => {
     });
   });
 
+
   router.patch('/confirm/:confirmationCode', (req, res) => {
     const { confirmationCode } = req.params;
 
+    // Find the user with the confirmation code
     User.findOne({confirmationCode: confirmationCode}).then((user) => {
         if(user.status === "Active") {
             res.status(400).json({msg: "This account has already been confirmed"})
         }
-
+        // patch the user
         User.updateOne({confirmationCode: confirmationCode}, { $set: { status: "Active" }})
         .then(() => {
-            res.status(200).json({ msg: "Grea! We have confirmed you account" });
+            res.status(200).json({ msg: "Great! We have confirmed you account" });
           })
     }).catch(err => res.status(400).json({err, msg: "Invalid token" }))
   });
