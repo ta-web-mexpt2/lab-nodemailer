@@ -20,7 +20,7 @@ const generateHTML = (filename, options) => {
 exports.send = (options) => {
   const html = generateHTML(options.filename, options);
   const mailOptions = {
-    from: "Chuchito's Spammer 🤓 <benbalderas3@gmail.com>",
+    from: "Account Confirmation 🤓 <benbalderas3@gmail.com>",
     to: options.email,
     subject: options.subject,
     message: options.message,
