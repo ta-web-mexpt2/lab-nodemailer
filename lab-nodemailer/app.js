@@ -13,6 +13,7 @@ mongoose.connect(process.env.DB, {
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const profileRouter = require('./routes/profiles');
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/profiles', profileRouter);
 
 module.exports = app;
